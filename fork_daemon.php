@@ -806,7 +806,7 @@ class fork_daemon
 
 						// call exit function if and only if its declared */
 						if ($child['status'] == self::WORKER)
-							$this->invoke_callback($this->parent_function_child_exited[ $this->forked_children[$child_pid]['bucket'] ], array($child_pid, $this->forked_children[$child_pid]['identifier']), true);
+							$this->invoke_callback($this->parent_function_child_exited[ $this->forked_children[$child_pid]['bucket'] ], array($child_pid, $this->forked_children[$child_pid]['identifier'], $status), true);
 
 						// stop the child pid
 						$this->forked_children[$child_pid]['status'] = self::STOPPED;
